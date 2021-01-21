@@ -1,10 +1,9 @@
 // Load config
-const TelegramBot = 'node-telegram-bot-api';
-const Files = require('fs');
+import Files from require('fs');
 const config = JSON.parse(Files.readFileSync('./config.json'));
 
 // Discord bot setup
-const Discord = require('discord.js');
+import Discord from require('discord.js');
 
 const discord_bot = new Discord.Client();
 
@@ -15,7 +14,7 @@ discord_bot.on('ready', async () => {
 });
 
 // Telegram bot setup
-const Telegram = require('node-telegram-bot-api');
+import Telegram from require('node-telegram-bot-api');
 const telegram_bot = new Telegram(config.telegram_token, {polling: true});
 
 // Mirror messages
