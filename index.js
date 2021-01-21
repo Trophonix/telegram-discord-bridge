@@ -10,6 +10,7 @@ const discord_bot = new Discord.Client();
 var discord_channel;
 discord_bot.on('ready', async () => {
     console.log('Logged into discord.');
+    discord_bot.setActivity('2-way communication!')
     discord_channel = await discord_bot.channels.fetch(config.discord_channel_id);
 });
 
