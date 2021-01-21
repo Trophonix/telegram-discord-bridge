@@ -37,7 +37,7 @@ telegram_bot.on('message', msg => {
             text = text.substring(0, 1900);
             text += ' *'
         }
-        discord_channel.send(`**${name} (@${user.username}):** ${msg.text}`)
+        discord_channel.send(`**${name}:** ${msg.text}`)
     }
 });
 
