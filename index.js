@@ -30,7 +30,7 @@ discord_bot.on('message', async msg => {
     if (msg.cleanContent && msg.cleanContent.trim().length > 0 && msg.channel.id === config.discord_channel_id) {
         var name = msg.member.displayName || msg.user.username;
         if (last_discord_name !== name) {
-            await telegram_bot.sendMessage(config.telegram_channel_id, `${name}`, { parse_mode: 'MarkdownV2' });
+            await telegram_bot.sendMessage(config.telegram_channel_id, `<b>${name}</b>`, { parse_mode: 'HTML' });
             last_discord_name = name;
         }
         await telegram_bot.sendMessage(config.telegram_channel_id, msg.cleanContent);
