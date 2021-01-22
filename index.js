@@ -10,7 +10,7 @@ const discord_bot = new Discord.Client();
 var discord_channel;
 discord_bot.on('ready', async () => {
     console.log('Logged into discord.');
-    await discord_bot.user.setActivity('2-way communication!')
+    await discord_bot.user.setActivity('2-way communication!', { 'type': 'STREAMING' })
     discord_channel = await discord_bot.channels.fetch(config.discord_channel_id);
 });
 
