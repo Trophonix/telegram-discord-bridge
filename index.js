@@ -41,6 +41,12 @@ telegram_bot.on('message', async msg => {
     if (msg.via_bot) return;
     last_discord_name = '';
     if (msg.chat && msg.text && msg.text.trim().length > 0 && msg.chat.id === config.telegram_channel_id) {
+        if (msg.text.length == 6) {
+            let isnum = /^\d+$/.test(msg.text);
+            if (isnum) {
+                return;
+            }
+        }
         var user = msg.from;
         var name = user.first_name;
         if (user.last_name) name += ' ' + user.last_name;
